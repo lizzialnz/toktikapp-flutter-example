@@ -17,7 +17,8 @@ class MyApp extends StatelessWidget {
 
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => DiscoverProviders()),
+        ChangeNotifierProvider(
+            lazy: false, create: (_) => DiscoverProviders()..loadNextPage()),
       ],
       child: MaterialApp(
         title: 'Toktik App',
